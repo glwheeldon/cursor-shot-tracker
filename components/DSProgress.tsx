@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import { ProgressBar } from 'react-native-paper';
+import * as React from "react";
+import { View, StyleSheet, Text } from "react-native";
+import { ProgressBar } from "react-native-paper";
 
 export type DSProgressProps = {
   progress: number;
@@ -9,7 +9,12 @@ export type DSProgressProps = {
   style?: any;
 };
 
-export function DSProgress({ progress, color = '#0FB8A9', label, style }: DSProgressProps) {
+export function DSProgress({
+  progress,
+  color = "#0FB8A9",
+  label,
+  style,
+}: DSProgressProps) {
   return (
     <View style={style}>
       {label && <Text style={styles.label}>{label}</Text>}
@@ -22,15 +27,15 @@ const styles = StyleSheet.create({
   progress: {
     height: 8,
     borderRadius: 8,
-    backgroundColor: '#E5E7EB',
+    backgroundColor: "#E5E7EB",
     marginBottom: 8,
   },
   label: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
     fontSize: 14,
-    color: '#111827',
+    color: "#111827",
     marginBottom: 4,
   },
 });
 
-export default DSProgress; 
+export default DSProgress;

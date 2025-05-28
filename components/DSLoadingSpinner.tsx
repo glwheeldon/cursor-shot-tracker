@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { ActivityIndicator } from 'react-native-paper';
+import * as React from "react";
+import { ActivityIndicator } from "react-native-paper";
 
 export type DSLoadingSpinnerProps = {
   size?: number;
@@ -7,8 +7,12 @@ export type DSLoadingSpinnerProps = {
   style?: any;
 };
 
-export function DSLoadingSpinner({ size = 24, color = '#0FB8A9', style }: DSLoadingSpinnerProps) {
+export function DSLoadingSpinner({
+  size = 24,
+  color = "#0FB8A9",
+  style,
+}: DSLoadingSpinnerProps) {
   return <ActivityIndicator size={size} color={color} style={style} />;
 }
 
-export default DSLoadingSpinner; 
+export default DSLoadingSpinner;

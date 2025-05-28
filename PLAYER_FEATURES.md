@@ -3,6 +3,7 @@
 This document details the player-specific features in the Basketball Shot Tracker application.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Player Dashboard](#player-dashboard)
 - [Session Management](#session-management)
@@ -21,12 +22,14 @@ Players are the primary users of the application, with features focused on track
 ## Player Dashboard
 
 The player dashboard (`/dashboard`) provides:
+
 - Overview of recent sessions
 - Quick statistics summary
 - Performance trends
 - Quick access to create new sessions
 
 Key components:
+
 - Stats summary cards
 - Recent sessions list
 - Performance charts
@@ -35,12 +38,14 @@ Key components:
 ## Session Management
 
 Players can manage shooting sessions through:
+
 - Creating new sessions
 - Recording shots during active sessions
 - Viewing session history
 - Analyzing session performance
 
 The session management interfaces include:
+
 - `/sessions`: Session history list
 - `/sessions/[id]`: Individual session details
 - `/sessions/[id]/active`: Active session interface for recording shots
@@ -48,12 +53,14 @@ The session management interfaces include:
 ## Shot Tracking
 
 Players can track shots with:
+
 - Made/missed recording
 - Shot position tracking (optional)
 - Shot type categorization (optional)
 - Real-time statistics updates
 
 The shot tracking interface (`/sessions/[id]/active`) provides:
+
 - Large made/missed buttons
 - Running statistics display
 - Session timer
@@ -62,12 +69,14 @@ The shot tracking interface (`/sessions/[id]/active`) provides:
 ## Statistics and Analysis
 
 Players can analyze their performance through:
+
 - Overall shooting statistics
 - Session-by-session breakdown
 - Performance trends over time
 - Sport-specific analytics
 
 The statistics interfaces include:
+
 - `/stats`: Overall statistics dashboard
 - `/dashboard/stats`: Dashboard statistics summary
 - `/dashboard/shot-analysis`: Detailed shot analysis
@@ -75,12 +84,14 @@ The statistics interfaces include:
 ## Player Profile
 
 Players can manage their profile through:
+
 - Personal information updates
 - Avatar customization
 - Sport preference settings
 - Shooter ID management
 
 The profile interface (`/profile`) provides:
+
 - Profile information editing
 - Avatar upload
 - Shooter ID display and sharing
@@ -89,12 +100,14 @@ The profile interface (`/profile`) provides:
 ## Friend Connections
 
 Players can connect with friends through:
+
 - Shooter ID sharing
 - Friend requests
 - Friend activity viewing
 - Performance comparisons
 
 The friend management interfaces include:
+
 - `/connect`: Friend connection interface
 - `/connect/[id]`: Connect with specific shooter ID
 - `/friends`: Friend list and management
@@ -102,12 +115,14 @@ The friend management interfaces include:
 ## Activity Feed
 
 Players can view activity through:
+
 - Personal activity history
 - Friend activity feed
 - Coach interactions
 - Performance milestones
 
 The activity feed interface (`/feed`) provides:
+
 - Personal activity tab
 - Friend activity tab
 - Activity cards with session details
@@ -116,7 +131,9 @@ The activity feed interface (`/feed`) provides:
 ## Player-Specific Components
 
 ### BottomNav
+
 Mobile navigation tailored for player interface:
+
 - Dashboard
 - Sessions
 - Stats
@@ -124,7 +141,9 @@ Mobile navigation tailored for player interface:
 - Profile
 
 ### SessionCard
+
 Card displaying session information with:
+
 - Date and time
 - Sport type
 - Location
@@ -132,14 +151,18 @@ Card displaying session information with:
 - Action buttons
 
 ### StatsCard
+
 Card displaying performance statistics:
+
 - Total shots
 - Made shots
 - Shooting percentage
 - Session count
 
 ### NewSessionButton
+
 Button with form for creating new sessions:
+
 - Sport selection
 - Location input
 - Notes input

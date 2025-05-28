@@ -1,10 +1,13 @@
-import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text, Button } from 'react-native-paper';
+import * as React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text, Button } from "react-native-paper";
 
-export class DSErrorBoundary extends React.Component<{
-  children: React.ReactNode;
-}, { hasError: boolean }> {
+export class DSErrorBoundary extends React.Component<
+  {
+    children: React.ReactNode;
+  },
+  { hasError: boolean }
+> {
   constructor(props: any) {
     super(props);
     this.state = { hasError: false };
@@ -27,8 +30,16 @@ export class DSErrorBoundary extends React.Component<{
       return (
         <View style={styles.container}>
           <Text style={styles.title}>Something went wrong.</Text>
-          <Text style={styles.desc}>An unexpected error occurred. Please try again.</Text>
-          <Button mode="contained" onPress={this.handleReload} style={styles.button} labelStyle={styles.buttonLabel} buttonColor="#0FB8A9">
+          <Text style={styles.desc}>
+            An unexpected error occurred. Please try again.
+          </Text>
+          <Button
+            mode="contained"
+            onPress={this.handleReload}
+            style={styles.button}
+            labelStyle={styles.buttonLabel}
+            buttonColor="#0FB8A9"
+          >
             Reload
           </Button>
         </View>
@@ -41,32 +52,32 @@ export class DSErrorBoundary extends React.Component<{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 32,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   title: {
-    fontFamily: 'Poppins-Bold',
+    fontFamily: "Poppins-Bold",
     fontSize: 22,
-    color: '#EF4444',
+    color: "#EF4444",
     marginBottom: 8,
   },
   desc: {
-    fontFamily: 'Poppins-Regular',
+    fontFamily: "Poppins-Regular",
     fontSize: 16,
-    color: '#6B7280',
+    color: "#6B7280",
     marginBottom: 24,
-    textAlign: 'center',
+    textAlign: "center",
   },
   button: {
     borderRadius: 8,
   },
   buttonLabel: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: "Poppins-SemiBold",
     fontSize: 16,
-    color: '#fff',
+    color: "#fff",
   },
 });
 
-export default DSErrorBoundary; 
+export default DSErrorBoundary;

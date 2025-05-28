@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import * as React from "react";
+import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 
 export type DSTabsProps = {
   tabs: string[];
@@ -17,7 +17,14 @@ export function DSTabs({ tabs, activeIndex, onTabChange, style }: DSTabsProps) {
           style={[styles.tab, activeIndex === idx && styles.activeTab]}
           onPress={() => onTabChange(idx)}
         >
-          <Text style={[styles.tabLabel, activeIndex === idx && styles.activeTabLabel]}>{tab}</Text>
+          <Text
+            style={[
+              styles.tabLabel,
+              activeIndex === idx && styles.activeTabLabel,
+            ]}
+          >
+            {tab}
+          </Text>
         </TouchableOpacity>
       ))}
     </View>
@@ -26,8 +33,8 @@ export function DSTabs({ tabs, activeIndex, onTabChange, style }: DSTabsProps) {
 
 const styles = StyleSheet.create({
   tabs: {
-    flexDirection: 'row',
-    backgroundColor: '#F3F4F6',
+    flexDirection: "row",
+    backgroundColor: "#F3F4F6",
     borderRadius: 8,
     padding: 4,
     marginBottom: 16,
@@ -36,21 +43,21 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 10,
     borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   activeTab: {
-    backgroundColor: '#0FB8A9',
+    backgroundColor: "#0FB8A9",
   },
   tabLabel: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
     fontSize: 16,
-    color: '#6B7280',
+    color: "#6B7280",
   },
   activeTabLabel: {
-    color: '#fff',
-    fontFamily: 'Poppins-SemiBold',
+    color: "#fff",
+    fontFamily: "Poppins-SemiBold",
   },
 });
 
-export default DSTabs; 
+export default DSTabs;

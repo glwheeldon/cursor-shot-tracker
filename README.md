@@ -44,50 +44,50 @@ The Basketball Shot Tracker App is a progressive web application (PWA) designed 
 ### Directory Structure
 
 \`\`\`
-├── app/                  # Next.js App Router pages and layouts
-│   ├── api/              # API routes
-│   ├── auth/             # Authentication pages
-│   ├── dashboard/        # Dashboard and analysis pages
-│   ├── sessions/         # Session management pages
-│   ├── profile/          # User profile pages
-│   ├── friends/          # Friend connection pages
-│   ├── feed/             # Activity feed pages
-│   ├── stats/            # Statistics and analysis pages
-│   ├── settings/         # User settings pages
-│   ├── connect/          # QR code connection pages
-│   └── debug/            # Debugging and diagnostic tools
-├── components/           # Reusable UI components
-│   ├── ui/               # Base UI components
-│   ├── auth/             # Authentication components
-│   ├── layout/           # Layout components
-│   └── sessions/         # Session-related components
-├── contexts/             # React context providers
-│   └── auth-context.tsx  # Authentication context
-├── hooks/                # Custom React hooks
-│   ├── use-form.ts       # Form handling hooks
-│   ├── use-indexed-db.ts # IndexedDB hooks
-│   └── use-safe-async.ts # Safe async operation hooks
-├── lib/                  # Utility functions and shared code
-│   ├── icons.ts          # Centralized icon system
-│   ├── supabase.ts       # Supabase client configuration
-│   ├── indexed-db.ts     # IndexedDB configuration
-│   ├── sync-service.ts   # Data synchronization service
-│   ├── error-handler.ts  # Error handling utilities
-│   └── utils.ts          # General utility functions
-├── public/               # Static assets
-├── scripts/              # Utility scripts
-│   ├── icon-audit.ts     # Script to audit icon usage
-│   ├── generate-icons.ts # Script to generate app icons
-│   └── app-store-assets.ts # Script to generate app store assets
-├── services/             # Service layer
-│   └── auth-service.ts   # Authentication service
-├── supabase/             # Supabase schema and migrations
-│   └── schema.sql        # Database schema
-├── types/                # TypeScript type definitions
-│   ├── index.ts          # Common types
-│   ├── supabase.ts       # Supabase database types
-│   └── sync.ts           # Synchronization types
-└── capacitor.config.ts   # Capacitor configuration
+├── app/ # Next.js App Router pages and layouts
+│ ├── api/ # API routes
+│ ├── auth/ # Authentication pages
+│ ├── dashboard/ # Dashboard and analysis pages
+│ ├── sessions/ # Session management pages
+│ ├── profile/ # User profile pages
+│ ├── friends/ # Friend connection pages
+│ ├── feed/ # Activity feed pages
+│ ├── stats/ # Statistics and analysis pages
+│ ├── settings/ # User settings pages
+│ ├── connect/ # QR code connection pages
+│ └── debug/ # Debugging and diagnostic tools
+├── components/ # Reusable UI components
+│ ├── ui/ # Base UI components
+│ ├── auth/ # Authentication components
+│ ├── layout/ # Layout components
+│ └── sessions/ # Session-related components
+├── contexts/ # React context providers
+│ └── auth-context.tsx # Authentication context
+├── hooks/ # Custom React hooks
+│ ├── use-form.ts # Form handling hooks
+│ ├── use-indexed-db.ts # IndexedDB hooks
+│ └── use-safe-async.ts # Safe async operation hooks
+├── lib/ # Utility functions and shared code
+│ ├── icons.ts # Centralized icon system
+│ ├── supabase.ts # Supabase client configuration
+│ ├── indexed-db.ts # IndexedDB configuration
+│ ├── sync-service.ts # Data synchronization service
+│ ├── error-handler.ts # Error handling utilities
+│ └── utils.ts # General utility functions
+├── public/ # Static assets
+├── scripts/ # Utility scripts
+│ ├── icon-audit.ts # Script to audit icon usage
+│ ├── generate-icons.ts # Script to generate app icons
+│ └── app-store-assets.ts # Script to generate app store assets
+├── services/ # Service layer
+│ └── auth-service.ts # Authentication service
+├── supabase/ # Supabase schema and migrations
+│ └── schema.sql # Database schema
+├── types/ # TypeScript type definitions
+│ ├── index.ts # Common types
+│ ├── supabase.ts # Supabase database types
+│ └── sync.ts # Synchronization types
+└── capacitor.config.ts # Capacitor configuration
 \`\`\`
 
 ## Key Systems
@@ -136,14 +136,17 @@ The application implements a bidirectional friend connection system:
 The application uses Supabase (PostgreSQL) with the following main tables:
 
 - **profiles**: User profiles with preferences and settings
+
   - Contains user information like display name, avatar URL, preferred sport
   - Linked to auth.users via the id column
 
 - **sessions**: Shooting sessions with metadata
+
   - Tracks start/end times, location, sport type, and status
   - Linked to user profiles via user_id
 
 - **shots**: Individual shots within a session
+
   - Records distance, make/miss status, and timestamp
   - Linked to sessions via session_id and to users via user_id
 
@@ -157,15 +160,18 @@ The application uses Supabase (PostgreSQL) with the following main tables:
 
 The application implements the following RLS policies to ensure data security:
 
-- **User Profiles**: 
+- **User Profiles**:
+
   - Users can view any profile (needed for friend search)
   - Users can only update their own profile
 
 - **Sessions**:
+
   - Users can view, create, update, and delete their own sessions
   - Users can view their friends' sessions (for the activity feed)
 
 - **Shots**:
+
   - Users can view, create, update, and delete their own shots
   - Users can view their friends' shots (for the activity feed)
 

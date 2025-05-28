@@ -3,6 +3,7 @@
 This document details the deployment process for the Basketball Shot Tracker application.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Vercel Deployment](#vercel-deployment)
@@ -29,6 +30,7 @@ The Basketball Shot Tracker application is deployed as a web application on Verc
 ## Vercel Deployment
 
 ### Initial Setup
+
 1. Connect your GitHub repository to Vercel
 2. Configure the project settings:
    - Framework preset: Next.js
@@ -37,12 +39,14 @@ The Basketball Shot Tracker application is deployed as a web application on Verc
    - Install command: `npm install`
 
 ### Deployment Configuration
+
 1. Set up environment variables (see [Environment Variables](#environment-variables))
 2. Configure build settings:
    - Node.js version: 18.x
    - Include source maps: Yes (for error tracking)
 
 ### Custom Domains
+
 1. Add your custom domain in the Vercel dashboard
 2. Configure DNS settings as instructed
 3. Enable HTTPS with automatic certificate management
@@ -50,28 +54,33 @@ The Basketball Shot Tracker application is deployed as a web application on Verc
 ## Supabase Setup
 
 ### Database Setup
+
 1. Create a new Supabase project
 2. Run the database schema migrations:
    - Execute `schema.sql` to create initial tables
    - Execute additional migration files as needed
 
 ### Authentication Setup
+
 1. Configure email authentication
 2. Set up password policies
 3. Configure email templates for verification and password reset
 
 ### Storage Setup
+
 1. Create the necessary storage buckets:
    - `avatars`: For user profile pictures
    - `session-images`: For session-related images
 
 ### Row Level Security (RLS)
+
 1. Apply RLS policies from the migration files
 2. Verify policy effectiveness with test queries
 
 ## Environment Variables
 
 Required environment variables:
+
 - `NEXT_PUBLIC_SUPABASE_URL`: Supabase project URL
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Supabase anonymous key
 - `SUPABASE_SERVICE_ROLE_KEY`: Supabase service role key (server-side only)
@@ -87,6 +96,7 @@ Required environment variables:
 ## Build Process
 
 The build process includes:
+
 1. Installing dependencies
 2. Type checking with TypeScript
 3. Linting with ESLint
@@ -104,11 +114,13 @@ npm run build
 CI/CD is handled through GitHub Actions and Vercel:
 
 ### GitHub Actions Workflow
+
 1. Run tests on pull requests
 2. Check code quality and formatting
 3. Build preview deployments for pull requests
 
 ### Vercel Deployment
+
 1. Automatic deployments on main branch changes
 2. Preview deployments for pull requests
 3. Production deployments with manual promotion
@@ -116,6 +128,7 @@ CI/CD is handled through GitHub Actions and Vercel:
 ## Mobile App Deployment
 
 ### Capacitor Setup
+
 1. Build the web application
 2. Add Capacitor configuration
 3. Add native platforms:
@@ -125,12 +138,14 @@ CI/CD is handled through GitHub Actions and Vercel:
    \`\`\`
 
 ### iOS Deployment
+
 1. Open the iOS project in Xcode
 2. Configure signing certificates
 3. Build and archive the application
 4. Submit to App Store Connect
 
 ### Android Deployment
+
 1. Open the Android project in Android Studio
 2. Configure signing keys
 3. Build the release APK/AAB
@@ -139,6 +154,7 @@ CI/CD is handled through GitHub Actions and Vercel:
 ## Post-Deployment Verification
 
 After deployment, verify:
+
 1. Authentication flows
 2. Database connections
 3. Storage functionality
@@ -149,6 +165,7 @@ After deployment, verify:
 ## Rollback Procedures
 
 If issues are detected:
+
 1. Identify the problematic deployment
 2. Revert to the previous successful deployment in Vercel
 3. Verify database schema compatibility

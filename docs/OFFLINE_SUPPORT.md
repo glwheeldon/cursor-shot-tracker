@@ -3,6 +3,7 @@
 This document details the offline functionality in the Basketball Shot Tracker application.
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [IndexedDB Storage](#indexeddb-storage)
 - [Service Worker](#service-worker)
@@ -22,6 +23,7 @@ The application provides comprehensive offline support, allowing users to contin
 The application uses IndexedDB for local data storage:
 
 ### Database Structure
+
 - `profiles`: User profile data
 - `sessions`: Shooting session data
 - `shots`: Shot data for each session
@@ -29,6 +31,7 @@ The application uses IndexedDB for local data storage:
 - `auth_tokens`: Securely stored authentication tokens
 
 ### Key Functions
+
 - `enhancedIndexedDB.saveProfile(profile, synced)`: Saves profile data
 - `enhancedIndexedDB.getProfile(id)`: Retrieves profile data
 - `enhancedIndexedDB.saveSession(session, synced)`: Saves session data
@@ -43,12 +46,14 @@ The application uses IndexedDB for local data storage:
 ## Service Worker
 
 The service worker (`sw.js`) provides:
+
 - Offline page caching
 - Asset caching
 - Network request interception
 - Background synchronization
 
 Key features:
+
 - Precaching of critical assets
 - Runtime caching strategies
 - Offline fallback pages
@@ -57,12 +62,14 @@ Key features:
 ## Offline Authentication
 
 Offline authentication is managed through:
+
 - Secure token storage in IndexedDB
 - Token expiration management
 - Offline session validation
 - Seamless online/offline transitions
 
 The `tokenManager` service provides:
+
 - `updateFromSession(session)`: Updates tokens from session
 - `refreshToken()`: Attempts to refresh the token
 - `isOfflineAccessValid()`: Checks offline access validity
@@ -72,6 +79,7 @@ The `tokenManager` service provides:
 ## Data Synchronization
 
 Data synchronization is handled by the `syncService`:
+
 - `syncData()`: Synchronizes all unsynced data
 - `syncProfiles()`: Synchronizes profile changes
 - `syncSessions()`: Synchronizes session changes
@@ -79,6 +87,7 @@ Data synchronization is handled by the `syncService`:
 - `handleSyncError(error, table, record)`: Handles synchronization errors
 
 Synchronization process:
+
 1. Detect network connectivity
 2. Retrieve unsynced records
 3. Send records to server
@@ -89,11 +98,13 @@ Synchronization process:
 ## Conflict Resolution
 
 The `conflictResolver` handles data conflicts:
+
 - `resolveProfileConflict(local, remote)`: Resolves profile conflicts
 - `resolveSessionConflict(local, remote)`: Resolves session conflicts
 - `resolveShotConflict(local, remote)`: Resolves shot conflicts
 
 Conflict resolution strategies:
+
 - Timestamp-based resolution (latest wins)
 - Field-specific resolution (merge specific fields)
 - User preference resolution (prompt user when necessary)
@@ -101,6 +112,7 @@ Conflict resolution strategies:
 ## Offline UI Indicators
 
 The application provides clear UI indicators for offline status:
+
 - `NetworkStatusIndicator`: Shows online/offline status
 - `OfflineBanner`: Banner indicating offline mode
 - `OfflineSessionBanner`: Banner for offline sessions
@@ -109,6 +121,7 @@ The application provides clear UI indicators for offline status:
 ## Progressive Web App (PWA)
 
 The application is configured as a PWA with:
+
 - Web App Manifest (`manifest.ts`)
 - Service Worker registration
 - Install prompts
@@ -118,6 +131,7 @@ The application is configured as a PWA with:
 ## Offline Pages
 
 Dedicated offline pages are provided:
+
 - `/offline.html`: Main offline fallback
 - `/offline/dashboard.html`: Offline dashboard
 - `/offline/profile.html`: Offline profile

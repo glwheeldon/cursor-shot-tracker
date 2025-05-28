@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { View, StyleSheet, ViewProps } from 'react-native';
-import { Text } from 'react-native-paper';
+import * as React from "react";
+import { View, StyleSheet, ViewProps } from "react-native";
+import { Text } from "react-native-paper";
 
 export function DSCard({ children, style, ...props }: ViewProps) {
   return (
@@ -10,32 +10,62 @@ export function DSCard({ children, style, ...props }: ViewProps) {
   );
 }
 
-export function DSCardHeader({ children, style }: { children: React.ReactNode; style?: any }) {
+export function DSCardHeader({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: any;
+}) {
   return <View style={[styles.header, style]}>{children}</View>;
 }
 
-export function DSCardTitle({ children, style }: { children: React.ReactNode; style?: any }) {
+export function DSCardTitle({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: any;
+}) {
   return <Text style={[styles.title, style]}>{children}</Text>;
 }
 
-export function DSCardDescription({ children, style }: { children: React.ReactNode; style?: any }) {
+export function DSCardDescription({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: any;
+}) {
   return <Text style={[styles.description, style]}>{children}</Text>;
 }
 
-export function DSCardContent({ children, style }: { children: React.ReactNode; style?: any }) {
+export function DSCardContent({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: any;
+}) {
   return <View style={[styles.content, style]}>{children}</View>;
 }
 
-export function DSCardFooter({ children, style }: { children: React.ReactNode; style?: any }) {
+export function DSCardFooter({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: any;
+}) {
   return <View style={[styles.footer, style]}>{children}</View>;
 }
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 12,
     padding: 16,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
@@ -46,15 +76,15 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   title: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: "Poppins-SemiBold",
     fontSize: 18,
-    color: '#111827',
+    color: "#111827",
     marginBottom: 4,
   },
   description: {
-    fontFamily: 'Poppins-Regular',
+    fontFamily: "Poppins-Regular",
     fontSize: 16,
-    color: '#6B7280',
+    color: "#6B7280",
     marginBottom: 8,
   },
   content: {
@@ -65,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DSCard; 
+export default DSCard;

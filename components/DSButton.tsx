@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
-import { Button } from 'react-native-paper';
+import * as React from "react";
+import { StyleSheet } from "react-native";
+import { Button } from "react-native-paper";
 
 export type DSButtonProps = {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'link' | 'destructive';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "ghost" | "link" | "destructive";
+  size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
   children: React.ReactNode;
   style?: any;
@@ -12,8 +12,8 @@ export type DSButtonProps = {
 } & React.ComponentProps<typeof Button>;
 
 export function DSButton({
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   fullWidth = false,
   children,
   style,
@@ -22,40 +22,40 @@ export function DSButton({
 }: DSButtonProps) {
   let buttonStyle = [styles.base, style];
   let textStyle = [styles.label, labelStyle];
-  let mode: 'contained' | 'outlined' | 'text' = 'contained';
-  let buttonColor = '#0FB8A9';
-  let textColor = '#fff';
+  let mode: "contained" | "outlined" | "text" = "contained";
+  let buttonColor = "#0FB8A9";
+  let textColor = "#fff";
 
-  if (variant === 'secondary') {
-    mode = 'outlined';
-    buttonColor = '#fff';
-    textColor = '#0FB8A9';
+  if (variant === "secondary") {
+    mode = "outlined";
+    buttonColor = "#fff";
+    textColor = "#0FB8A9";
     buttonStyle.push(styles.secondary);
-    textStyle.push({ color: '#0FB8A9' });
-  } else if (variant === 'ghost') {
-    mode = 'outlined';
-    buttonColor = 'transparent';
-    textColor = '#0FB8A9';
+    textStyle.push({ color: "#0FB8A9" });
+  } else if (variant === "ghost") {
+    mode = "outlined";
+    buttonColor = "transparent";
+    textColor = "#0FB8A9";
     buttonStyle.push(styles.ghost);
-    textStyle.push({ color: '#0FB8A9' });
-  } else if (variant === 'link') {
-    mode = 'text';
-    buttonColor = 'transparent';
-    textColor = '#0FB8A9';
+    textStyle.push({ color: "#0FB8A9" });
+  } else if (variant === "link") {
+    mode = "text";
+    buttonColor = "transparent";
+    textColor = "#0FB8A9";
     buttonStyle.push(styles.link);
-    textStyle.push({ color: '#0FB8A9', textDecorationLine: 'underline' });
-  } else if (variant === 'destructive') {
-    mode = 'contained';
-    buttonColor = '#EF4444';
-    textColor = '#fff';
+    textStyle.push({ color: "#0FB8A9", textDecorationLine: "underline" });
+  } else if (variant === "destructive") {
+    mode = "contained";
+    buttonColor = "#EF4444";
+    textColor = "#fff";
     buttonStyle.push(styles.destructive);
-    textStyle.push({ color: '#fff' });
+    textStyle.push({ color: "#fff" });
   }
 
-  if (size === 'sm') {
+  if (size === "sm") {
     buttonStyle.push({ height: 36, borderRadius: 8, paddingHorizontal: 12 });
     textStyle.push({ fontSize: 14 });
-  } else if (size === 'lg') {
+  } else if (size === "lg") {
     buttonStyle.push({ height: 56, borderRadius: 8, paddingHorizontal: 24 });
     textStyle.push({ fontSize: 18 });
   } else {
@@ -64,7 +64,7 @@ export function DSButton({
   }
 
   if (fullWidth) {
-    buttonStyle.push({ width: '100%' });
+    buttonStyle.push({ width: "100%" });
   }
 
   return (
@@ -72,7 +72,7 @@ export function DSButton({
       mode={mode}
       style={buttonStyle}
       labelStyle={textStyle}
-      buttonColor={variant === 'primary' ? '#0FB8A9' : buttonColor}
+      buttonColor={variant === "primary" ? "#0FB8A9" : buttonColor}
       textColor={textColor}
       {...props}
     >
@@ -85,34 +85,34 @@ const styles = StyleSheet.create({
   base: {
     borderRadius: 8,
     marginBottom: 8,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   label: {
-    fontFamily: 'Poppins-SemiBold',
-    fontWeight: '600',
-    color: '#fff',
+    fontFamily: "Poppins-SemiBold",
+    fontWeight: "600",
+    color: "#fff",
     letterSpacing: 0.5,
   },
   secondary: {
     borderWidth: 1,
-    borderColor: '#0FB8A9',
-    backgroundColor: '#fff',
+    borderColor: "#0FB8A9",
+    backgroundColor: "#fff",
   },
   ghost: {
     borderWidth: 1,
-    borderColor: '#0FB8A9',
-    backgroundColor: 'transparent',
+    borderColor: "#0FB8A9",
+    backgroundColor: "transparent",
   },
   link: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     borderWidth: 0,
     paddingHorizontal: 0,
   },
   destructive: {
-    backgroundColor: '#EF4444',
-    borderColor: '#EF4444',
+    backgroundColor: "#EF4444",
+    borderColor: "#EF4444",
     borderWidth: 1,
   },
 });
 
-export default DSButton; 
+export default DSButton;

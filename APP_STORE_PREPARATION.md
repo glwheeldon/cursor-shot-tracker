@@ -29,17 +29,20 @@ This guide outlines the steps needed to prepare the Shot Tracker app for submiss
    \`\`\`
 
 2. Configure App Settings:
+
    - Set Bundle Identifier (com.shottracker.app)
    - Set Version and Build numbers
    - Configure Signing & Capabilities with your Apple Developer account
 
 3. Add Required App Store Information:
+
    - App Privacy Policy URL
    - App Store screenshots (6.5", 5.5", and 12.9" sizes)
    - App Store icon (1024x1024px)
    - App description and keywords
 
 4. Configure App Store Connect:
+
    - Create a new app in App Store Connect
    - Set up App Store Information
    - Configure In-App Purchases (if applicable)
@@ -57,11 +60,13 @@ This guide outlines the steps needed to prepare the Shot Tracker app for submiss
    \`\`\`
 
 2. Configure App Settings:
+
    - Update applicationId in build.gradle (com.shottracker.app)
    - Set versionCode and versionName
    - Configure signing with your keystore
 
 3. Add Required Play Store Information:
+
    - Privacy Policy URL
    - Play Store screenshots (phone, 7" tablet, 10" tablet)
    - Feature graphic (1024x500px)
@@ -69,6 +74,7 @@ This guide outlines the steps needed to prepare the Shot Tracker app for submiss
    - App description and keywords
 
 4. Configure Google Play Console:
+
    - Create a new app in Google Play Console
    - Set up Store Listing
    - Configure In-App Products (if applicable)
@@ -100,6 +106,6 @@ This guide outlines the steps needed to prepare the Shot Tracker app for submiss
 2. Terms of Service
 3. Support contact information
 4. Age rating information
-\`\`\`
+   \`\`\`
 
 ## 13. Update Package.json with Capacitor Scripts

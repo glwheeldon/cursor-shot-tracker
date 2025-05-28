@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
-import { ScrollView, View, StyleSheet, Image } from 'react-native';
-import { Text, Button, Card, TextInput, Avatar, Badge, ProgressBar, HelperText } from 'react-native-paper';
-import { DSInput } from '../../components/DSInput';
+import React, { useState } from "react";
+import { ScrollView, View, StyleSheet, Image } from "react-native";
+import {
+  Text,
+  Button,
+  Card,
+  TextInput,
+  Avatar,
+  Badge,
+  ProgressBar,
+  HelperText,
+} from "react-native-paper";
+import { DSInput } from "../../components/DSInput";
 
 export default function DesignSystemShowcase() {
-  const [inputValue, setInputValue] = useState('');
-  const [password, setPassword] = useState('');
+  const [inputValue, setInputValue] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -14,9 +23,29 @@ export default function DesignSystemShowcase() {
 
       {/* Buttons */}
       <Text style={styles.section}>Buttons</Text>
-      <Button mode="contained" style={styles.button} labelStyle={styles.buttonLabel} buttonColor="#0FB8A9">Primary</Button>
-      <Button mode="outlined" style={styles.button} labelStyle={styles.buttonLabel} textColor="#0FB8A9">Secondary</Button>
-      <Button mode="text" style={styles.button} labelStyle={[styles.buttonLabel, { color: '#0FB8A9' }]}>Text</Button>
+      <Button
+        mode="contained"
+        style={styles.button}
+        labelStyle={styles.buttonLabel}
+        buttonColor="#0FB8A9"
+      >
+        Primary
+      </Button>
+      <Button
+        mode="outlined"
+        style={styles.button}
+        labelStyle={styles.buttonLabel}
+        textColor="#0FB8A9"
+      >
+        Secondary
+      </Button>
+      <Button
+        mode="text"
+        style={styles.button}
+        labelStyle={[styles.buttonLabel, { color: "#0FB8A9" }]}
+      >
+        Text
+      </Button>
 
       {/* Inputs */}
       <Text style={styles.section}>Inputs</Text>
@@ -49,26 +78,48 @@ export default function DesignSystemShowcase() {
       <Card style={styles.card}>
         <Card.Content>
           <Text style={styles.cardTitle}>Card Title</Text>
-          <Text style={styles.cardDesc}>This is a card description. Cards use a white background, 12px radius, and md shadow.</Text>
+          <Text style={styles.cardDesc}>
+            This is a card description. Cards use a white background, 12px
+            radius, and md shadow.
+          </Text>
         </Card.Content>
       </Card>
 
       {/* Badge */}
       <Text style={styles.section}>Badge</Text>
       <View style={styles.row}>
-        <Badge style={[styles.badge, { backgroundColor: '#0FB8A9' }]}>Primary</Badge>
-        <Badge style={[styles.badge, { backgroundColor: '#10B981' }]}>Success</Badge>
-        <Badge style={[styles.badge, { backgroundColor: '#F59E0B' }]}>Warning</Badge>
-        <Badge style={[styles.badge, { backgroundColor: '#EF4444' }]}>Error</Badge>
-        <Badge style={[styles.badge, { backgroundColor: '#3B82F6' }]}>Info</Badge>
+        <Badge style={[styles.badge, { backgroundColor: "#0FB8A9" }]}>
+          Primary
+        </Badge>
+        <Badge style={[styles.badge, { backgroundColor: "#10B981" }]}>
+          Success
+        </Badge>
+        <Badge style={[styles.badge, { backgroundColor: "#F59E0B" }]}>
+          Warning
+        </Badge>
+        <Badge style={[styles.badge, { backgroundColor: "#EF4444" }]}>
+          Error
+        </Badge>
+        <Badge style={[styles.badge, { backgroundColor: "#3B82F6" }]}>
+          Info
+        </Badge>
       </View>
 
       {/* Avatar */}
       <Text style={styles.section}>Avatar</Text>
       <View style={styles.row}>
-        <Avatar.Text size={48} label="AB" style={styles.avatar} labelStyle={styles.avatarLabel} />
+        <Avatar.Text
+          size={48}
+          label="AB"
+          style={styles.avatar}
+          labelStyle={styles.avatarLabel}
+        />
         <Avatar.Icon size={48} icon="account" style={styles.avatar} />
-        <Avatar.Image size={48} source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }} style={styles.avatar} />
+        <Avatar.Image
+          size={48}
+          source={{ uri: "https://randomuser.me/api/portraits/men/1.jpg" }}
+          style={styles.avatar}
+        />
       </View>
 
       {/* ProgressBar */}
@@ -83,23 +134,23 @@ export default function DesignSystemShowcase() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9FAFB',
+    backgroundColor: "#F9FAFB",
   },
   content: {
     padding: 24,
-    alignItems: 'stretch',
+    alignItems: "stretch",
   },
   heading: {
-    fontFamily: 'Poppins-Bold',
+    fontFamily: "Poppins-Bold",
     fontSize: 28,
-    color: '#111827',
+    color: "#111827",
     marginBottom: 24,
-    textAlign: 'center',
+    textAlign: "center",
   },
   section: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: "Poppins-SemiBold",
     fontSize: 20,
-    color: '#0FB8A9',
+    color: "#0FB8A9",
     marginTop: 32,
     marginBottom: 12,
   },
@@ -108,78 +159,78 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   buttonLabel: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: "Poppins-SemiBold",
     fontSize: 16,
-    color: '#fff',
+    color: "#fff",
   },
   input: {
     height: 48,
     borderRadius: 8,
-    backgroundColor: '#fff',
-    fontFamily: 'Poppins-Regular',
+    backgroundColor: "#fff",
+    fontFamily: "Poppins-Regular",
     fontSize: 16,
-    color: '#111827',
+    color: "#111827",
     borderWidth: 1,
-    borderColor: '#D1D5DB',
+    borderColor: "#D1D5DB",
     paddingHorizontal: 12,
     marginBottom: 8,
   },
   errorText: {
-    color: '#EF4444',
-    fontFamily: 'Poppins-Regular',
+    color: "#EF4444",
+    fontFamily: "Poppins-Regular",
     fontSize: 14,
     marginBottom: 8,
-    textAlign: 'center',
+    textAlign: "center",
   },
   card: {
     borderRadius: 12,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 16,
     marginBottom: 16,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.05,
     shadowRadius: 6,
     elevation: 2,
   },
   cardTitle: {
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: "Poppins-SemiBold",
     fontSize: 18,
-    color: '#111827',
+    color: "#111827",
     marginBottom: 4,
   },
   cardDesc: {
-    fontFamily: 'Poppins-Regular',
+    fontFamily: "Poppins-Regular",
     fontSize: 16,
-    color: '#6B7280',
+    color: "#6B7280",
   },
   badge: {
-    fontFamily: 'Poppins-Medium',
+    fontFamily: "Poppins-Medium",
     fontSize: 14,
-    color: '#fff',
+    color: "#fff",
     marginRight: 8,
     borderRadius: 8,
     paddingHorizontal: 8,
     paddingVertical: 2,
   },
   row: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginBottom: 16,
   },
   avatar: {
     marginRight: 12,
-    backgroundColor: '#E6F7F5',
+    backgroundColor: "#E6F7F5",
   },
   avatarLabel: {
-    fontFamily: 'Poppins-Bold',
-    color: '#0FB8A9',
+    fontFamily: "Poppins-Bold",
+    color: "#0FB8A9",
     fontSize: 18,
   },
   progress: {
     height: 8,
     borderRadius: 8,
-    backgroundColor: '#E5E7EB',
+    backgroundColor: "#E5E7EB",
     marginBottom: 24,
   },
 });
