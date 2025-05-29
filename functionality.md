@@ -1,8 +1,8 @@
-# Basketball Shot Tracker App
+# Shot Tracker App
 
 ## Overview
 
-The Basketball Shot Tracker is a mobile and web application designed to help basketball players of all levels track, analyze, and improve their shooting performance. Whether you're a beginner looking to develop your skills or an experienced player aiming to refine your shooting accuracy, this app provides the tools you need to measure progress and achieve your goals.
+The Shot Tracker is a mobile and web application designed to help players of all levels track, analyze, and improve their shooting performance across various sports. Whether you're a beginner looking to develop your skills or an experienced player aiming to refine your shooting accuracy, this app provides the tools you need to measure progress and achieve your goals.
 
 ## Key Features
 
@@ -34,7 +34,7 @@ The Basketball Shot Tracker is a mobile and web application designed to help bas
 
 1. **Sign Up**: Create an account with email
 2. **Profile Setup**: Complete your player profile with personal details
-3. **Sport Selection**: Choose basketball or netball as your primary sport
+3. **Sport Selection**: Choose your primary sport from available options
 4. **First Session**: Start your first shooting session
 
 ### Daily Usage
@@ -101,4 +101,4 @@ The feed section allows you to:
 
 ---
 
-The Basketball Shot Tracker app transforms how players practice, providing the tools to turn regular shooting sessions into data-driven improvement opportunities. By combining easy-to-use tracking with basic analytics and social features, the app helps players at all levels develop better shooting skills and achieve their basketball goals.
+The Shot Tracker app transforms how players practice, providing the tools to turn regular shooting sessions into data-driven improvement opportunities. By combining easy-to-use tracking with basic analytics and social features, the app helps players at all levels develop better shooting skills and achieve their sporting goals.

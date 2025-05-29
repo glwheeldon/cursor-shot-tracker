@@ -1,6 +1,6 @@
 # Coach Features Documentation
 
-This document details the coach-specific features in the Basketball Shot Tracker application.
+This document details the coach-specific features in the Shot Tracker application.
 
 ## Table of Contents
 

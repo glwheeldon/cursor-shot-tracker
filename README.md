@@ -1,23 +1,22 @@
-# Basketball Shot Tracker App
+# Shot Tracker App
 
-A comprehensive application for tracking basketball and netball shooting sessions, analyzing performance, and connecting with friends.
+A comprehensive application for tracking shooting sessions across various sports, analyzing performance, and connecting with friends.
 
 ## Application Overview
 
-The Basketball Shot Tracker App is a progressive web application (PWA) designed to help players track their shooting performance, analyze their progress over time, and connect with friends to share their stats. The app works both online and offline, with seamless data synchronization when connectivity is restored.
+The Shot Tracker app transforms how players practice, providing the tools to turn regular shooting sessions into data-driven improvement opportunities. By combining easy-to-use tracking with basic analytics and social features, the app helps players at all levels develop better shooting skills and achieve their sporting goals.
 
 ### Key Features
 
-- **Session Tracking**: Create and manage shooting sessions for basketball or netball
+- **Session Tracking**: Create and manage shooting sessions for various sports
 - **Shot Analysis**: Track makes and misses with detailed analytics and visualization
 - **Performance Stats**: View comprehensive statistics about your shooting performance over time
 - **Friend Connections**: Connect with friends to share stats and progress
 - **Activity Feed**: View your friends' recent sessions and shooting activities
 - **Profile Management**: Customize your profile with avatar and preferences
-- **Progressive Web App**: Install on your device for offline access
-- **Multi-sport Support**: Track sessions for both basketball and netball
-- **Offline Mode**: Full functionality even without internet connection
-- **Cross-platform**: Works on web, iOS, and Android through Capacitor
+- **Multi-sport Support**: Track sessions for any sport requiring shot practice
+- **Offline Mode**: Full functionality
+- **Cross-platform**: Works on iOS and Android using Expo
 - **Advanced Analytics**: More detailed shooting performance analysis with ML insights
 - **Shooting Challenges**: Compete with friends on specific shooting challenges
 - **Team Management**: Create and manage teams for group tracking
@@ -31,34 +30,23 @@ The Basketball Shot Tracker App is a progressive web application (PWA) designed 
 
 ### Tech Stack
 
-- **Frontend**: Next.js 14+ with App Router
-- **UI Components**: Custom components with Tailwind CSS and shadcn/ui
+- **Frontend**: React Native with Expo Router for mobile navigation- **UI Components**: Custom design system components with React Native Paper
 - **Database**: Supabase (PostgreSQL)
 - **Authentication**: Supabase Auth
 - **Storage**: Supabase Storage for avatars and assets
 - **State Management**: React Context API and custom hooks
 - **Offline Support**: IndexedDB with custom sync service
-- **Native Features**: Capacitor for camera, storage, and notifications
-- **Deployment**: Vercel
-
+- **Native Features**: Expo for camera, storage, and notifications
+- **Deployment**: Expo for mobile (iOS/Android)
 ### Directory Structure
 
-\`\`\`
-├── app/ # Next.js App Router pages and layouts
-│ ├── api/ # API routes
-│ ├── auth/ # Authentication pages
-│ ├── dashboard/ # Dashboard and analysis pages
-│ ├── sessions/ # Session management pages
-│ ├── profile/ # User profile pages
-│ ├── friends/ # Friend connection pages
-│ ├── feed/ # Activity feed pages
-│ ├── stats/ # Statistics and analysis pages
-│ ├── settings/ # User settings pages
-│ ├── connect/ # QR code connection pages
-│ └── debug/ # Debugging and diagnostic tools
+```
+├── app/ # Expo Router navigation (mobile-first)
+│   ├── (tabs)/ # Tab navigation screens
+│   ├── _layout.tsx # Expo Router root layout
+│   ├── +html.tsx # Web compatibility (imported from config/html)
+│   └── ... # Other screens and modals
 ├── components/ # Reusable UI components
-│ ├── ui/ # Base UI components
-│ ├── auth/ # Authentication components
 │ ├── layout/ # Layout components
 │ └── sessions/ # Session-related components
 ├── contexts/ # React context providers

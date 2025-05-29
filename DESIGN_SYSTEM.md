@@ -1,4 +1,4 @@
-# Basketball Shot Tracker - Design System
+# Shot Tracker - Design System
 
 ## Colors
 

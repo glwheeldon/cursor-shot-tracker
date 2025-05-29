@@ -19,7 +19,7 @@ export interface Database {
           country: string | null;
           date_of_birth: string | null;
           avatar_url: string | null;
-          preferred_sport: "basketball" | "netball" | null;
+          preferred_sport: string | null;
           created_at: string | null;
           updated_at: string | null;
         };
@@ -32,7 +32,7 @@ export interface Database {
           country?: string | null;
           date_of_birth?: string | null;
           avatar_url?: string | null;
-          preferred_sport?: "basketball" | "netball" | null;
+          preferred_sport?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -45,7 +45,7 @@ export interface Database {
           country?: string | null;
           date_of_birth?: string | null;
           avatar_url?: string | null;
-          preferred_sport?: "basketball" | "netball" | null;
+          preferred_sport?: string | null;
           created_at?: string | null;
           updated_at?: string | null;
         };
@@ -62,7 +62,7 @@ export interface Database {
         Row: {
           id: string;
           user_id: string;
-          sport: "basketball" | "netball";
+          sport: string;
           title: string | null;
           location: string | null;
           notes: string | null;
@@ -75,7 +75,7 @@ export interface Database {
         Insert: {
           id?: string;
           user_id: string;
-          sport: "basketball" | "netball";
+          sport: string;
           title?: string | null;
           location?: string | null;
           notes?: string | null;
@@ -88,7 +88,7 @@ export interface Database {
         Update: {
           id?: string;
           user_id?: string;
-          sport?: "basketball" | "netball";
+          sport?: string;
           title?: string | null;
           location?: string | null;
           notes?: string | null;

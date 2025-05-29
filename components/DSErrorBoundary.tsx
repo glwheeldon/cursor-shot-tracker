@@ -1,28 +1,38 @@
 import * as React from "react";
 import { View, StyleSheet } from "react-native";
 import { Text, Button } from "react-native-paper";
+import { TempoDevtools } from "tempo-devtools";
 
 export class DSErrorBoundary extends React.Component<
   {
     children: React.ReactNode;
   },
-  { hasError: boolean }
+  { hasError: boolean; error: Error | null }
 > {
   constructor(props: any) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, error: null };
   }
 
-  static getDerivedStateFromError() {
-    return { hasError: true };
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
   }
 
-  componentDidCatch(error: any, info: any) {
-    // You can log error here
+  componentDidCatch(error: Error, info: React.ErrorInfo) {
+    console.error("Error caught by DSErrorBoundary:", error, info);
+
+    // Report to Tempo if available
+    try {
+      if (process.env.EXPO_PUBLIC_TEMPO) {
+        TempoDevtools.reportError(error, info);
+      }
+    } catch (reportError) {
+      console.error("Failed to report error to Tempo:", reportError);
+    }
   }
 
   handleReload = () => {
-    this.setState({ hasError: false });
+    this.setState({ hasError: false, error: null });
   };
 
   render() {
@@ -31,7 +41,8 @@ export class DSErrorBoundary extends React.Component<
         <View style={styles.container}>
           <Text style={styles.title}>Something went wrong.</Text>
           <Text style={styles.desc}>
-            An unexpected error occurred. Please try again.
+            {this.state.error?.message ||
+              "An unexpected error occurred. Please try again."}
           </Text>
           <Button
             mode="contained"

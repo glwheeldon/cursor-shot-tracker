@@ -10,6 +10,9 @@ import { Stack, useRouter, useSegments } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { TempoDevtools } from "tempo-devtools";
+// Import the HTML configuration
+import "../config/html";
 
 import { useColorScheme } from "@/components/useColorScheme";
 import { AuthProvider, useAuth } from "../contexts/auth-context";
@@ -33,14 +36,18 @@ function AuthGate({ children }: { children: React.ReactNode }) {
   const segments = useSegments();
 
   useEffect(() => {
-    if (!isLoading && !user) {
-      // Allow unauthenticated access to the showcase page (root of (tabs) or index)
-      const isShowcase =
-        segments[0] === "(tabs)" && (!segments[1] || segments[1] === "index");
-      const current = segments[segments.length - 1];
-      if (!isShowcase && current !== "login" && current !== "signup") {
-        router.replace("/login");
+    try {
+      if (!isLoading && !user) {
+        // Allow unauthenticated access to the showcase page (root of (tabs) or index)
+        const isShowcase =
+          segments[0] === "(tabs)" && (!segments[1] || segments[1] === "index");
+        const current = segments[segments.length - 1];
+        if (!isShowcase && current !== "login" && current !== "signup") {
+          router.replace("/login");
+        }
       }
+    } catch (error) {
+      console.error("Navigation error:", error);
     }
   }, [isLoading, user, router, segments]);
 
@@ -89,6 +96,17 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
+
+  // Initialize Tempo Devtools with error handling
+  useEffect(() => {
+    try {
+      if (process.env.EXPO_PUBLIC_TEMPO) {
+        TempoDevtools.init();
+      }
+    } catch (error) {
+      console.error("Failed to initialize Tempo:", error);
+    }
+  }, []);
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
